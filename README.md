@@ -1,7 +1,7 @@
 # Hello welcome to my Personal Website
 
 ## Technology
-
+the technology it will support for my website is:
 ### Server Side: 
     Programming: Golang
     Framework: GIN
