@@ -2,7 +2,9 @@
 title: "About Me"
 date: 2022-01-01
 draft: false
+markup: md
 ---
+<img src="/img/portrait.jpeg" style="border-radius: 50%; width: 30%; display: inline; "/>
 
 Hello folks,
 My name is Restu Muzakir. I am a passionate software developer with a strong interest in web development and problem-solving. I love to explore new technologies and learn new things in the ever-evolving world of software development.

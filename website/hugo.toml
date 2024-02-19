@@ -4,6 +4,9 @@ title = 'Restu Muzakir'
 theme = 'hello-friend-ng'
 paginate = 10
 
+[markup.goldmark.renderer]
+  unsafe = true
+
 [author]
   name = 'Restu Muzakir'
   email = 'hi@restuhaqza.dev'
