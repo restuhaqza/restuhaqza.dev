@@ -48,6 +48,11 @@ paginate = 10
     url = '/blog/'
     name = 'Blog'
 
+  [[menus.main]]
+    identifier = 'about'
+    url = '/about/'
+    name = 'About'
+
 
 
 
