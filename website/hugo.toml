@@ -1,0 +1,57 @@
+baseURL = 'https://restuhaqza.dev/'
+languageCode = 'en-us'
+title = 'Restu Muzakir'
+theme = 'hello-friend-ng'
+paginate = 10
+
+[author]
+  name = 'Restu Muzakir'
+  email = 'hi@restuhaqza.dev'
+
+[params]
+  [params.logo]
+    logoText = '$ echo "Hello World"'
+
+
+  [params.portrait]
+    path = 'img/portrait.jpeg'
+    alt = 'Restu Muzakir'
+  
+  [[params.social]]
+    name = 'github'
+    url = 'https://github.com/restuhaqza'
+
+  [[params.social]]
+    name = 'linkedin'
+    url = 'https://www.linkedin.com/in/restuhaqza/'
+
+  [[params.social]]
+    name = 'twitter'
+    url = 'https://twitter.com/restuhaqza'
+
+  [[params.social]]
+    name = 'instagram'
+    url = 'https://www.instagram.com/restuhaqza/'
+
+  [[params.social]]
+    name = 'email'
+    url = 'mailto:hi@restuhaqza.dev'
+
+[params.footer]
+  trademark = '2024 All rights reserved'
+  author = true
+  top_text = ['Back to top']
+  
+[menus]
+  [[menus.main]]
+    identifier = 'blog'
+    url = '/blog/'
+    name = 'Blog'
+
+
+
+
+
+
+
+
