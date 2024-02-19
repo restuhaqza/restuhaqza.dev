@@ -12,7 +12,7 @@ func main() {
 
 	r.GET("/", api.HelloWorld)
 
-	err := r.Run(":3000")
+	err := r.Run(":3001")
 
 	if err != nil {
 		fmt.Println("server error:", err.Error())
