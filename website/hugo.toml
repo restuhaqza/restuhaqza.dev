@@ -4,6 +4,8 @@ title = 'Restu Muzakir'
 theme = 'hello-friend-ng'
 paginate = 10
 
+summary = 'Restuhaqza is a software engineer from Indonesian who is passionate about DevOps things and Open Source Enthusiast.'
+
 [markup.goldmark.renderer]
   unsafe = true
 
@@ -12,6 +14,7 @@ paginate = 10
   email = 'hi@restuhaqza.dev'
 
 [params]
+  description = 'Restuhaqza is a software engineer from Indonesian who is passionate about DevOps things and Open Source Enthusiast.'
   [params.logo]
     logoText = '$ echo "Hello World"'
 
