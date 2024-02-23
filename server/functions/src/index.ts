@@ -17,14 +17,19 @@ const app = express();
 
 const mailingListHandler = new MailingHandler();
 
+app.get("/", (req: Request, res: Response) => {
+    return res.status(200).json({message: "Hello from Restu Universe!"});
+  });
+
 // cors policy
 const corsOptions = {
   origin: (origin: any, callback: any) => {
     const isEmulator = process.env.FUNCTIONS_EMULATOR === "true";
     const allowedOrigin = [
       "https://restuhaqza.dev",
-      "https://www.restuhaqza.dev",
+      "https://www.restuhaqza.dev"
     ];
+
     if (isEmulator || allowedOrigin.includes(origin)) {
       callback(null, true);
     } else {
@@ -36,10 +41,6 @@ const corsOptions = {
 };
 
 app.use(cors(corsOptions));
-
-app.get("/", (req: Request, res: Response) => {
-  return res.status(200).json({message: "Hello from Restu Universe!"});
-});
 app.post("/newsletter/subscribe", mailingListHandler.subscribe.bind(mailingListHandler));
 
 export const api = onRequest(app);
