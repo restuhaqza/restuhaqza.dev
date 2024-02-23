@@ -40,16 +40,16 @@ button[type="submit"] {
 <form>
   <div class="form-group">
     <label for="name">First Name</label>
-    <input type="text" class="form-control" id="firstName" placeholder="Enter your first name">
+    <input type="text" class="form-control" id="firstName" placeholder="Enter your first name" required/>
   </div>
   <div class="form-group">
     <label for="lastName">Last Name</label>
-    <input type="text" class="form-control" id="lastName" placeholder="Enter your last name"/>
+    <input type="text" class="form-control" id="lastName" placeholder="Enter your last name" required/>
   </div>
 
   <div class="form-group">
     <label for="email">Email address</label>
-    <input type="email" class="form-control" id="email" placeholder="Enter your email">
+    <input type="email" class="form-control" id="email" placeholder="Enter your email" required/>
   </div>
   <button id="submitBtn" type="submit" class="btn btn-primary" onClick="subscribeNewsletter(this)">Subscribe</button>
 </form>
@@ -57,9 +57,9 @@ button[type="submit"] {
 
 <script>
     document.getElementById('submitBtn').addEventListener("click", function(e ){
-        console.log(e)
         e.preventDefault()
         const url = 'https://api-6vankd4g6a-uc.a.run.app/api/newsletter/subscribe'
+
         const firstName = document.getElementById("firstName").value
         const lastName = document.getElementById("lastName").value
         const email = document.getElementById("email").value
@@ -70,8 +70,6 @@ button[type="submit"] {
             email
         }
 
-        console.log(dataToSend)
-
         fetch(url, {
         method: 'POST',
         headers: {
@@ -81,16 +79,22 @@ button[type="submit"] {
         })
         .then(response => {
         // Handle response
-            console.log(response)
+            return new Promise(async res => {
+                await res(response.json())
+            })
+        }).then(data => {
+            if(data.status == 400) {
+                window.alert(data.message)
+            } else {
+                window.alert(data.data.email + ' subscribed to newsletter')
+                window.location.href = '/'     
+            }
         })
         .catch(error => {
         // Handle error
             console.log(error)
+            window.alert(error.body.message)
         });
     })
     
 </script>
-
-
-
-

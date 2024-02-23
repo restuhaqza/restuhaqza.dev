@@ -20,11 +20,12 @@ const mailingListHandler = new MailingHandler();
 // cors policy
 const corsOptions = {
   origin: (origin: any, callback: any) => {
+    const isEmulator = process.env.FUNCTIONS_EMULATOR === "true";
     const allowedOrigin = ["https://restuhaqza.dev"];
-    if (allowedOrigin.includes(origin)) {
+    if (isEmulator || allowedOrigin.includes(origin)) {
       callback(null, true);
     } else {
-      callback(new Error("Not allowed by CORS"));
+      callback({message: "Not allowed by CORS"});
     }
   },
   allowedHeaders: ["Content-Type", "Authorization"],
@@ -36,6 +37,6 @@ app.use(cors(corsOptions));
 app.get("/", (req: Request, res: Response) => {
   return res.status(200).json({message: "Hello from Restu Universe!"});
 });
-app.post("/newsletter/subscribe", mailingListHandler.subscribe);
+app.post("/newsletter/subscribe", mailingListHandler.subscribe.bind(mailingListHandler));
 
 export const api = onRequest(app);
