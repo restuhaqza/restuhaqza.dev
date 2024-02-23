@@ -58,7 +58,7 @@ button[type="submit"] {
 <script>
     document.getElementById('submitBtn').addEventListener("click", function(e ){
         e.preventDefault()
-        const url = 'https://api-6vankd4g6a-uc.a.run.app/api/newsletter/subscribe'
+        const url = 'https://api-6vankd4g6a-uc.a.run.app/newsletter/subscribe'
 
         const firstName = document.getElementById("firstName").value
         const lastName = document.getElementById("lastName").value
