@@ -59,6 +59,11 @@ summary = 'Restuhaqza is a software engineer from Indonesian who is passionate a
     url = '/about/'
     name = 'About'
 
+  [[menus.main]]
+    identifier = 'newsletter'
+    url = '/newsletter/'
+    name = 'Newsletter'
+
 
 
 
