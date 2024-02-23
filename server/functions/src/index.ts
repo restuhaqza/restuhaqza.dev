@@ -17,7 +17,7 @@ const app = express();
 const mailingListHandler = new MailingHandler();
 
 app.get("/", (req: Request, res: Response) => {
-    return res.status(200).json({message: "Hello from Restu Universe!"});
+  return res.status(200).json({message: "Hello from Restu Universe!"});
 });
 app.post("/newsletter/subscribe", mailingListHandler.subscribe.bind(mailingListHandler));
 
