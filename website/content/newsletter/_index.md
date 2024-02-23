@@ -28,9 +28,8 @@ input[type="email"] {
 
 button[type="submit"] {
   padding: 10px 20px;
-  background-color: #007bff;
   color: #fff;
-  border: none;
+  border: 1px solid grey;
   border-radius: 4px;
   cursor: pointer;
 }
@@ -51,7 +50,7 @@ button[type="submit"] {
     <label for="email">Email address</label>
     <input type="email" class="form-control" id="email" placeholder="Enter your email" required/>
   </div>
-  <button id="submitBtn" type="submit" class="btn btn-primary" onClick="subscribeNewsletter(this)">Subscribe</button>
+  <button id="submitBtn" type="submit">Subscribe</button>
 </form>
 </div>
 
