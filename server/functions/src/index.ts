@@ -21,7 +21,10 @@ const mailingListHandler = new MailingHandler();
 const corsOptions = {
   origin: (origin: any, callback: any) => {
     const isEmulator = process.env.FUNCTIONS_EMULATOR === "true";
-    const allowedOrigin = ["https://restuhaqza.dev"];
+    const allowedOrigin = [
+      "https://restuhaqza.dev",
+      "https://www.restuhaqza.dev",
+    ];
     if (isEmulator || allowedOrigin.includes(origin)) {
       callback(null, true);
     } else {
